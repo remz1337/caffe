@@ -16,8 +16,8 @@ max_iter: 1000000000
 
 # snapshot intermediate results
 snapshot: 2000
-snapshot_prefix: "/YOURPATH/crfrnn-" ##CHANGE THIS
+snapshot_prefix: "/snapshots/crfrnn-" ##CHANGE THIS
 
 # solver mode: CPU or GPU
-solver_mode: GPU
+solver_mode: CPU
 

@@ -4,7 +4,7 @@ layer {
   type: "Data"
   top: "data"
   data_param {
-    source: "/YOURPATH-pascal-lmdb/rgb-train"
+    source: "/home/remi/Github/crfasrnn-GOOD/caffe/examples/segmentationcrfasrnn/data-pascal-lmdb/train_images_20_lmdb"
     backend: LMDB
     batch_size: 1
   }
@@ -16,7 +16,7 @@ layer {
   type: "Data"
   top: "label"
   data_param {
-    source: "/YOURPATH-pascal-lmdb/label-train"
+    source: "/home/remi/Github/crfasrnn-GOOD/caffe/examples/segmentationcrfasrnn/data-pascal-lmdb/train_labels_20_lmdb"
     backend: LMDB
     batch_size: 1
   }
@@ -28,7 +28,7 @@ layer {
   type: "Data"
   top: "data"
   data_param {
-    source: "/YOURPATH-pascal-lmdb/rgb-val"
+    source: "/home/remi/Github/crfasrnn-GOOD/caffe/examples/segmentationcrfasrnn/data-pascal-lmdb/test_images_20_lmdb"
     backend: LMDB
     batch_size: 1
   }
@@ -39,7 +39,7 @@ layer {
   type: "Data"
   top: "label"
   data_param {
-    source: "/YOURPATH-pascal-lmdb/label-val"
+    source: "/home/remi/Github/crfasrnn-GOOD/caffe/examples/segmentationcrfasrnn/data-pascal-lmdb/test_labels_20_lmdb"
     backend: LMDB
     batch_size: 1
   }
