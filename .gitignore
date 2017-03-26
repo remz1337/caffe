@@ -94,4 +94,5 @@ LOG*
 CURRENT
 MANIFEST-*
 
-examples/segmentationcrfasrnn/data
+examples/segmentationcrfasrnn/data/
+*.mdb
