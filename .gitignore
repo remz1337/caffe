@@ -95,3 +95,7 @@ CURRENT
 MANIFEST-*
 
 examples/segmentationcrfasrnn/data/
+examples/segmentationcrfasrnn/images.log
+images.log
+*images.log*
+*log*
