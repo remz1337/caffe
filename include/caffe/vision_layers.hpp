@@ -374,6 +374,7 @@ class MultiStageMeanfieldLayer : public Layer<Dtype> {
   Dtype theta_alpha_;
   Dtype theta_beta_;
   Dtype theta_gamma_;
+  Dtype compat_mode_;
   int num_iterations_;
 
   boost::shared_array<Dtype> norm_feed_;

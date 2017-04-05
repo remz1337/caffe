@@ -424,6 +424,7 @@ message LossParameter {
   message MultiStageMeanfieldParameter {
     enum Mode {
       POTTS = 0;
+      CUSTOM = 11;
     }
     optional Mode compatibility_mode = 1 [default = POTTS];
     optional float threshold = 2;
