@@ -4,7 +4,7 @@ layer {
   type: "Data"
   top: "data"
   data_param {
-    source: "/home/remi/Github/crfasrnn/caffe/examples/segmentationcrfasrnn/data-pascal-lmdb/train_images_20_lmdb"
+    source: "/home/remi_bc/Github/crfasrnn/caffe/examples/segmentationcrfasrnn/train-CRF-RNN/train_images_20_lmdb"
     backend: LMDB
     batch_size: 1
   }
@@ -16,7 +16,7 @@ layer {
   type: "Data"
   top: "label"
   data_param {
-    source: "/home/remi/Github/crfasrnn/caffe/examples/segmentationcrfasrnn/data-pascal-lmdb/train_labels_20_lmdb"
+    source: "/home/remi_bc/Github/crfasrnn/caffe/examples/segmentationcrfasrnn/train-CRF-RNN/train_labels_20_lmdb"
     backend: LMDB
     batch_size: 1
   }
@@ -28,7 +28,7 @@ layer {
   type: "Data"
   top: "data"
   data_param {
-    source: "/home/remi/Github/crfasrnn/caffe/examples/segmentationcrfasrnn/data-pascal-lmdb/test_images_20_lmdb"
+    source: "/home/remi_bc/Github/crfasrnn/caffe/examples/segmentationcrfasrnn/train-CRF-RNN/test_images_20_lmdb"
     backend: LMDB
     batch_size: 1
   }
@@ -39,7 +39,7 @@ layer {
   type: "Data"
   top: "label"
   data_param {
-    source: "/home/remi/Github/crfasrnn/caffe/examples/segmentationcrfasrnn/data-pascal-lmdb/test_labels_20_lmdb"
+    source: "/home/remi_bc/Github/crfasrnn/caffe/examples/segmentationcrfasrnn/train-CRF-RNN/test_labels_20_lmdb"
     backend: LMDB
     batch_size: 1
   }
@@ -654,7 +654,7 @@ layer {
   lr_mult: 10000#learning rate for W_B
   }
   param {
-  lr_mult: 1000 #learning rate for compatiblity transform matrix
+  lr_mult: 10000 #learning rate for compatiblity transform matrix
   }
   multi_stage_meanfield_param {
    num_iterations: 10

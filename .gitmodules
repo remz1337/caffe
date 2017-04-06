@@ -1,0 +1,3 @@
+[submodule "examples/segmentationcrfasrnn/train-CRF-RNN"]
+	path = examples/segmentationcrfasrnn/train-CRF-RNN
+	url = https://github.com/remz1337/train-CRF-RNN.git
