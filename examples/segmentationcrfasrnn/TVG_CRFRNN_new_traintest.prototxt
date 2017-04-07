@@ -641,7 +641,7 @@ layer { type: 'Split' name: 'splitting'
 }
 
 layer {
-  name: "inference1"#if you set name "inference1", code will load parameters from caffemodel.
+  name: "inference1-ft"#if you set name "inference1", code will load parameters from caffemodel.
   type: "MultiStageMeanfield"
   bottom: "unary"
   bottom: "Q0"
