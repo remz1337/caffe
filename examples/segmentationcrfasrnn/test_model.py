@@ -14,19 +14,19 @@ def main():
 #  iteration_num = process_arguments(sys.argv)
 
   prototxt = 'TVG_CRFRNN_new_deploy.prototxt'
-#  caffemodel = 'models/train_iter_{}.caffemodel'
-  caffemodel = 'TVG_CRFRNN_COCO_VOC.caffemodel'
+  caffemodel = 'snapshots/crfrnn_iter_28000.caffemodel'
+#  caffemodel = 'TVG_CRFRNN_COCO_VOC.caffemodel'
   class_names = ['aeroplane', 'bicycle', 'bird', 'boat', 'bottle', 'bus', 'car', 'cat', 'chair', 'cow', 'diningtable', 'dog', 'horse', 'motorbike', 'person', 'pottedplant', 'sheep', 'sofa', 'train', 'tvmonitor']
   class_ids = get_id_classes(class_names)
   lut = create_lut(class_ids)
   
   file_names = load_test_data()
-  images, labels = create_full_paths(file_names, 'data-pascal-lmdb/images', 'data-pascal-lmdb/converted_labels')
+  images, labels = create_full_paths(file_names, 'train-CRF-RNN/images', 'train-CRF-RNN/converted_labels')
   
 #  test_net(prototxt, caffemodel.format(iteration_num), images, labels, lut)
   test_net(prototxt, caffemodel, images, labels, lut)
 
-def load_test_data(file_name='data-pascal-lmdb/test.txt'):
+def load_test_data(file_name='train-CRF-RNN/test.txt'):
   file_names = []
   with open(file_name, 'rb') as f:
       for fn in f:
