@@ -1,5 +1,5 @@
 name: "CRFRNN-VOC"
-input: 'data'
+input: 'data-ft'
 input_dim: 1
 input_dim: 3
 input_dim: 500
@@ -9,7 +9,7 @@ force_backward: true
 layer {
   name: "conv1_1"
   type: "Convolution"
-  bottom: "data"
+  bottom: "data-ft"
   top: "conv1_1"
   param {
     lr_mult: 1
@@ -27,7 +27,7 @@ layer {
   }
 }
 layer {
-  name: "relu1_1"
+  name: "relu1_1-ft"
   type: "ReLU"
   bottom: "conv1_1"
   top: "conv1_1"
@@ -53,16 +53,16 @@ layer {
   }
 }
 layer {
-  name: "relu1_2"
+  name: "relu1_2-ft"
   type: "ReLU"
   bottom: "conv1_2"
   top: "conv1_2"
 }
 layer {
-  name: "pool1"
+  name: "pool1-ft"
   type: "Pooling"
   bottom: "conv1_2"
-  top: "pool1"
+  top: "pool1-ft"
   pooling_param {
     pool: MAX
     kernel_size: 2
@@ -72,7 +72,7 @@ layer {
 layer {
   name: "conv2_1"
   type: "Convolution"
-  bottom: "pool1"
+  bottom: "pool1-ft"
   top: "conv2_1"
   param {
     lr_mult: 1
@@ -90,7 +90,7 @@ layer {
   }
 }
 layer {
-  name: "relu2_1"
+  name: "relu2_1-ft"
   type: "ReLU"
   bottom: "conv2_1"
   top: "conv2_1"
@@ -116,16 +116,16 @@ layer {
   }
 }
 layer {
-  name: "relu2_2"
+  name: "relu2_2-ft"
   type: "ReLU"
   bottom: "conv2_2"
   top: "conv2_2"
 }
 layer {
-  name: "pool2"
+  name: "pool2-ft"
   type: "Pooling"
   bottom: "conv2_2"
-  top: "pool2"
+  top: "pool2-ft"
   pooling_param {
     pool: MAX
     kernel_size: 2
@@ -135,7 +135,7 @@ layer {
 layer {
   name: "conv3_1"
   type: "Convolution"
-  bottom: "pool2"
+  bottom: "pool2-ft"
   top: "conv3_1"
   param {
     lr_mult: 1
@@ -153,7 +153,7 @@ layer {
   }
 }
 layer {
-  name: "relu3_1"
+  name: "relu3_1-ft"
   type: "ReLU"
   bottom: "conv3_1"
   top: "conv3_1"
@@ -179,7 +179,7 @@ layer {
   }
 }
 layer {
-  name: "relu3_2"
+  name: "relu3_2-ft"
   type: "ReLU"
   bottom: "conv3_2"
   top: "conv3_2"
@@ -205,16 +205,16 @@ layer {
   }
 }
 layer {
-  name: "relu3_3"
+  name: "relu3_3-ft"
   type: "ReLU"
   bottom: "conv3_3"
   top: "conv3_3"
 }
 layer {
-  name: "pool3"
+  name: "pool3-ft"
   type: "Pooling"
   bottom: "conv3_3"
-  top: "pool3"
+  top: "pool3-ft"
   pooling_param {
     pool: MAX
     kernel_size: 2
@@ -224,7 +224,7 @@ layer {
 layer {
   name: "conv4_1"
   type: "Convolution"
-  bottom: "pool3"
+  bottom: "pool3-ft"
   top: "conv4_1"
   param {
     lr_mult: 1
@@ -242,7 +242,7 @@ layer {
   }
 }
 layer {
-  name: "relu4_1"
+  name: "relu4_1-ft"
   type: "ReLU"
   bottom: "conv4_1"
   top: "conv4_1"
@@ -268,7 +268,7 @@ layer {
   }
 }
 layer {
-  name: "relu4_2"
+  name: "relu4_2-ft"
   type: "ReLU"
   bottom: "conv4_2"
   top: "conv4_2"
@@ -294,16 +294,16 @@ layer {
   }
 }
 layer {
-  name: "relu4_3"
+  name: "relu4_3-ft"
   type: "ReLU"
   bottom: "conv4_3"
   top: "conv4_3"
 }
 layer {
-  name: "pool4"
+  name: "pool4-ft"
   type: "Pooling"
   bottom: "conv4_3"
-  top: "pool4"
+  top: "pool4-ft"
   pooling_param {
     pool: MAX
     kernel_size: 2
@@ -313,7 +313,7 @@ layer {
 layer {
   name: "conv5_1"
   type: "Convolution"
-  bottom: "pool4"
+  bottom: "pool4-ft"
   top: "conv5_1"
   param {
     lr_mult: 1
@@ -331,7 +331,7 @@ layer {
   }
 }
 layer {
-  name: "relu5_1"
+  name: "relu5_1-ft"
   type: "ReLU"
   bottom: "conv5_1"
   top: "conv5_1"
@@ -357,7 +357,7 @@ layer {
   }
 }
 layer {
-  name: "relu5_2"
+  name: "relu5_2-ft"
   type: "ReLU"
   bottom: "conv5_2"
   top: "conv5_2"
@@ -383,16 +383,16 @@ layer {
   }
 }
 layer {
-  name: "relu5_3"
+  name: "relu5_3-ft"
   type: "ReLU"
   bottom: "conv5_3"
   top: "conv5_3"
 }
 layer {
-  name: "pool5"
+  name: "pool5-ft"
   type: "Pooling"
   bottom: "conv5_3"
-  top: "pool5"
+  top: "pool5-ft"
   pooling_param {
     pool: MAX
     kernel_size: 2
@@ -402,7 +402,7 @@ layer {
 layer {
   name: "fc6"
   type: "Convolution"
-  bottom: "pool5"
+  bottom: "pool5-ft"
   top: "fc6"
   param {
     lr_mult: 1
@@ -419,13 +419,13 @@ layer {
   }
 }
 layer {
-  name: "relu6"
+  name: "relu6-ft"
   type: "ReLU"
   bottom: "fc6"
   top: "fc6"
 }
 layer {
-  name: "drop6"
+  name: "drop6-ft"
   type: "Dropout"
   bottom: "fc6"
   top: "fc6"
@@ -453,13 +453,13 @@ layer {
   }
 }
 layer {
-  name: "relu7"
+  name: "relu7-ft"
   type: "ReLU"
   bottom: "fc7"
   top: "fc7"
 }
 layer {
-  name: "drop7"
+  name: "drop7-ft"
   type: "Dropout"
   bottom: "fc7"
   top: "fc7"
@@ -504,7 +504,7 @@ layer {
 layer {
   name: "score-pool4"
   type: "Convolution"
-  bottom: "pool4"
+  bottom: "pool4-ft"
   top: "score-pool4"
   param {
     lr_mult: 1
@@ -520,10 +520,10 @@ layer {
     engine: CAFFE
   }
 }
-layer { type: 'Crop' name: 'crop' bottom: 'score-pool4' bottom: 'score2'
+layer { type: 'Crop' name: 'crop-ft' bottom: 'score-pool4' bottom: 'score2'
   top: 'score-pool4c' }
 layer {
-  name: "fuse"
+  name: "fuse-ft"
   type: "Eltwise"
   bottom: "score2"
   bottom: "score-pool4c"
@@ -551,7 +551,7 @@ layer {
 layer {
   name: "score-pool3"
   type: "Convolution"
-  bottom: "pool3"
+  bottom: "pool3-ft"
   top: "score-pool3"
   param {
     lr_mult: 1
@@ -567,10 +567,10 @@ layer {
     engine: CAFFE
   }
 }
-layer { type: 'Crop' name: 'crop' bottom: 'score-pool3' bottom: 'score4'
+layer { type: 'Crop' name: 'crop-ft' bottom: 'score-pool3' bottom: 'score4'
   top: 'score-pool3c' }
 layer {
-  name: "fuse"
+  name: "fuse-ft"
   type: "Eltwise"
   bottom: "score4"
   bottom: "score-pool3c"
@@ -580,7 +580,7 @@ layer {
   }
 }
 layer {
-  name: "upsample"
+  name: "upsample-ft"
   type: "Deconvolution"
   bottom: "score-final"
   top: "bigscore"
@@ -594,19 +594,19 @@ layer {
     stride: 8
   }
 }
-layer { type: 'Crop' name: 'crop' bottom: 'bigscore' bottom: 'data' top: 'coarse' }
+layer { type: 'Crop' name: 'crop-ft' bottom: 'bigscore' bottom: 'data-ft' top: 'coarse-ft' }
 
-layer { type: 'Split' name: 'splitting'
-  bottom: 'coarse' top: 'unary' top: 'Q0'
+layer { type: 'Split' name: 'splitting-ft'
+  bottom: 'coarse-ft' top: 'unary-ft' top: 'Q0-ft'
 }
 
 layer {
   name: "inference1-ft"#if you set name "inference1", code will load parameters from caffemodel.
   type: "MultiStageMeanfield"
-  bottom: "unary"
-  bottom: "Q0"
-  bottom: "data"
-  top: "pred"
+  bottom: "unary-ft"
+  bottom: "Q0-ft"
+  bottom: "data-ft"
+  top: "pred-ft"
   param {
     lr_mult: 10000#learning rate for W_G
   }
